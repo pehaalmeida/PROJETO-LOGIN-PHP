@@ -1,0 +1,7 @@
+CREATE TABLE usuario (
+id_usuario INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+nome Varchar(265)  NOT NULL,
+usuario Varchar(265)  NOT NULL,
+senha Varchar(32)  NOT NULL,
+nivel_acesso int
+)
