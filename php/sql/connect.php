@@ -2,7 +2,7 @@
 define('HOST', '127.0.0.1');
 define('USER', 'ConsultaDB');
 define('PASSWORD', 'System@32');
-define('DB', 'controle4dx');
+define('DB', 'bd_php');
 
 try {
     $connect = mysqli_connect(HOST, USER, PASSWORD, DB) or dir("Erro");
