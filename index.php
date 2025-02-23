@@ -26,7 +26,7 @@ session_start();
 
                     <img src="midia/logoImg.png" width="250" height="250" alt="">
                     
-                    <h3 class="title has-text-grey"><a target="_blank">Painel Controle 4DX</a></h3>
+                    <h3 class="title has-text-grey"><a target="_blank">login PHP</a></h3>
                     <?php
                     if(isset($_SESSION['nao_valido'])):
                     ?>

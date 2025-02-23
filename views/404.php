@@ -25,4 +25,13 @@
     </section>
 </body>
 
+<script>
+    // Recupera o erro salvo no sessionStorage
+    const erroBanco = sessionStorage.getItem('db_error');
+    if (erroBanco) {
+        console.error(erroBanco);
+        sessionStorage.removeItem('db_error'); // Limpa após exibição
+    }
+</script>
+
 </html>

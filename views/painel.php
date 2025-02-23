@@ -21,7 +21,7 @@ include('../php/verificaUser.php');
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="../views/painel.php">
-    <h1 class="title is-4 LogoTitle">Incursão Food</h1>
+    <h1 class="title is-4 LogoTitle">Sistema de Login Php</h1>
     
     </a>
 

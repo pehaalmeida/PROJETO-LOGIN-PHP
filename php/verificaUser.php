@@ -3,7 +3,7 @@
 include('sql/connect.php');
 
 if(!$_SESSION['usuario']) {
-    header('Location: ../../index.php');
+    header('Location: ../index.php');
     exit;
 }else {
 
