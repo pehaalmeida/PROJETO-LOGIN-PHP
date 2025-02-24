@@ -1,3 +1,9 @@
+<?php
+session_start();
+include('../php/verificaUser.php');
+include('../php/skil/validaNivelPerms.php');
+?>
+
 <!DOCTYPE html>
 <html>
     

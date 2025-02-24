@@ -5,3 +5,4 @@ usuario Varchar(265)  NOT NULL,
 senha Varchar(32)  NOT NULL,
 nivel_acesso int
 )
+

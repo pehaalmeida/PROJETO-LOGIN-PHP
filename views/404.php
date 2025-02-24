@@ -1,3 +1,10 @@
+<?php
+session_start();
+include('../php/skil/exibir_erro.php');
+exibir_erro();
+
+?>
+
 <!DOCTYPE html>
 <html>
     

@@ -3,6 +3,7 @@ session_start();
 
     $Acesso = '';
 
+    // Verifica o nível de acesso do usuário com base na variável de sessão
     switch ($_SESSION['acesso']) {
         case '0':
             $Acesso = 'Usuario';
@@ -15,6 +16,7 @@ session_start();
             break;
     }
     
+    // Verifica o status de autenticação do usuário com base na variável de sessão
     switch ($_SESSION['StatusAutenticacao']) {
         case '0':
             $Autenticado = 'Sem Autenticado';

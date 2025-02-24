@@ -1,6 +1,9 @@
 <?php
 session_start();
 include('../php/verificaUser.php');
+include('../php/skil/exibir_erro.php');
+
+exibir_erro();
 
 ?>  
 <!DOCTYPE html>
@@ -51,7 +54,7 @@ include('../php/verificaUser.php');
           <a class="navbar-item">
             Permissões 
           </a>
-          <a class="navbar-item">
+          <a class="navbar-item" href="cadastro.php">
             Cadastro
           </a>
           <a class="navbar-item">
