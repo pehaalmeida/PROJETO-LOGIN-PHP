@@ -29,6 +29,7 @@ switch (mysqli_real_escape_string($connect, $_POST['nivelAcesso'])) {
         $nivelAcesso = 0;
         $_SESSION['selec_NivelAcesso'] = true;
         header('Location: ../views/cadastroViews.php');
+        exit();
         break;
 
 }
