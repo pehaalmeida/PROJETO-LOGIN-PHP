@@ -8,14 +8,6 @@ if (isset($_SESSION['StatusAutenticacao']) && $_SESSION['StatusAutenticacao'] ==
     exit;
 }
 
-
-// Verificação para validar se o usuário já está logado no sistema. Caso esteja, será direcionado ao painel.
-if (isset($_SESSION['StatusAutenticacao']) && $_SESSION['StatusAutenticacao'] == 1) {
-    header('Location: views/painel.php');
-    exit;
-}
-
-
 ?>
 
 <!DOCTYPE html>
