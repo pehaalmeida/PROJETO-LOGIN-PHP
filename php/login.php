@@ -12,30 +12,23 @@ if(empty($_POST['usuario']) || empty($_POST['senha'])) {
 $usuario = mysqli_real_escape_string($connect, $_POST['usuario']);
 $senha = mysqli_real_escape_string($connect, $_POST['senha']);
 
-$query = "SELECT id_usuario, nome, usuario, nivel_acesso FROM usuario WHERE usuario = '{$usuario}' and senha = md5('{$senha}')";
+$DadosSQL = SelectBD($connect, "SELECT * FROM usuario WHERE usuario = '{$usuario}'");
+$resultRow = $DadosSQL['resultRow'];
+$row = $DadosSQL['row'];
 
-$dados = mysqli_query($connect, $query);
-
-$resultRow = mysqli_fetch_assoc($dados);
-
-$row = mysqli_num_rows($dados);
-
-
-
-if($row == 1) {
-    $_SESSION['usuario'] = $usuario;
+if(password_verify($senha, $resultRow['senha'])){
+    $_SESSION['usuario'] = $resultRow['usuario'];
     $_SESSION['IdUser'] = $resultRow['id_usuario'];
     $_SESSION['nome'] = $resultRow['nome'];
     $_SESSION['acesso'] = $resultRow['nivel_acesso'];
     header('Location: ../views/painel.php');
     exit();
 
-
-}else if($row == 0) {
+}else {
     $_SESSION['nao_valido'] = true;
     header('Location: ../index.php');
+    echo 'erro'. $hash . 'e' . $resultRow['senha'];
     exit();
-    
 }
 
 mysqli_free_result($dados);

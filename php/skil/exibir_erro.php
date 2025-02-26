@@ -12,7 +12,7 @@ function exibir_erro($erro = '') {
         <div id="modal-erro" class="modal is-active">
             <div class="modal-background"></div>
             <div class="modal-content">
-                <div class="notification is-danger">
+                <div class="notification is-danger ">
                     <button class="delete" onclick="closeModal()"></button>
                     <strong>AVISO!</strong><br>
                     ' . $_SESSION['AlertErro'] . '

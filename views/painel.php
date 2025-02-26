@@ -54,7 +54,7 @@ exibir_erro();
           <a class="navbar-item">
             Permissões 
           </a>
-          <a class="navbar-item" href="cadastro.php">
+          <a class="navbar-item" href="cadastroViews.php">
             Cadastro
           </a>
           <a class="navbar-item">

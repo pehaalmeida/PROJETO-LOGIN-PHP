@@ -1,5 +1,13 @@
 <?php
 session_start();
+include('php/skil/avisoAlerta.php');
+
+// Verificação para validar se o usuário já está logado no sistema. Caso esteja, será direcionado ao painel.
+if (isset($_SESSION['StatusAutenticacao']) && $_SESSION['StatusAutenticacao'] == 1) {
+    header('Location: views/painel.php');
+    exit;
+}
+
 
 // Verificação para validar se o usuário já está logado no sistema. Caso esteja, será direcionado ao painel.
 if (isset($_SESSION['StatusAutenticacao']) && $_SESSION['StatusAutenticacao'] == 1) {
@@ -35,15 +43,7 @@ if (isset($_SESSION['StatusAutenticacao']) && $_SESSION['StatusAutenticacao'] ==
                     
                     <h3 class="title has-text-grey"><a target="_blank">login PHP</a></h3>
                     <?php
-                    if(isset($_SESSION['nao_valido'])):
-                    ?>
-                    <div class="notification is-danger">
-                      <p>ERRO: Usuário ou senha inválidos.</p>
-                    </div>
-                    <?php
-                     
-                     endif;  
-                     unset($_SESSION['nao_valido']);  
+                    exibirAviso('nao_valido', 'ERRO: Usuário ou senha inválidos.</b>', 'is-danger is-light');
                     ?>
 
                     <div class="box">

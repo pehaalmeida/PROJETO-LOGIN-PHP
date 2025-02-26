@@ -23,3 +23,59 @@ try {
  error_log("Erro ao conectar ao banco: " . $e->getMessage());
     exit;
 }
+
+
+try {
+    // Função para fazer Select
+    function SelectBD ($connect, $query) {
+        $dados = mysqli_query($connect, $query);
+        $resultRow = mysqli_fetch_assoc($dados);
+        $row = mysqli_num_rows($dados);
+    
+        mysqli_free_result($dados);
+    
+        return [
+            'resultRow' => $resultRow,
+            'row'   => $row,
+        ];
+     
+    }
+}catch (Exception $e) { 
+// Salva o erro no sessionStorage via JavaScript
+    echo "<script>
+    sessionStorage.setItem('db_error', 'Erro ao conectar com o servidor: " . addslashes($e->getMessage()) . "');
+    window.location.href = '../views/404.php';
+    </script>";
+    
+}
+
+try {
+// Função para inserir dados no banco
+function InsertBD($connect, $query) {
+    $result = mysqli_query($connect, $query);
+
+    if ($result) {
+        return [
+            'success' => true,
+            'insert_id' => mysqli_insert_id($connect), // Retorna o ID 
+            'message' => 'Registro inserido com sucesso!'
+        ];
+    } else {
+        return [
+            'success' => false,
+            'error' => mysqli_error($connect), // Retorna a mensagem de erro
+            'message' => 'Erro ao inserir registro!'
+        ];
+    }
+}
+}catch (Exception $e) { 
+// Salva o erro no sessionStorage via JavaScript
+    echo "<script>
+    sessionStorage.setItem('db_error', 'Erro ao conectar com o servidor: " . addslashes($e->getMessage()) . "');
+    window.location.href = '../views/404.php';
+    </script>";
+    
+}
+
+
+
